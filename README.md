@@ -1,59 +1,142 @@
-# TaskManager
+# Task Manager – Functional Guide
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.3.0.
+## 1. Application Purpose
 
-## Development server
+The purpose of the Task Manager application is to help users organize their work, manage projects, and track tasks efficiently.
 
-To start a local development server, run:
+The application allows users to create and manage personal projects, organize tasks within those projects, monitor task progress, and improve their productivity.
 
-```bash
-ng serve
-```
+## 2. User Roles
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Guest (Not Authenticated User)
 
-## Code scaffolding
+- Can access the Home page.
+- Can view the public Projects catalog.
+- Can view details of individual projects.
+- Can register a new account.
+- Can log in to an existing account.
+- Cannot create, edit, or delete projects and tasks.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Authenticated User
 
-```bash
-ng generate component component-name
-```
+- Can access their personal Dashboard.
+- Can view the Projects catalog.
+- Can create new projects.
+- Can edit their own projects.
+- Can delete their own projects.
+- Can view and manage tasks belonging to their projects.
+- Can create, edit, and delete their own tasks.
+- Can log out of their account.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 3. Public Features
 
-```bash
-ng generate --help
-```
+The following features are accessible without authentication:
 
-## Building
+- **Home Page** – introduces the application and its main purpose.
+- **Projects Catalog** – displays the available projects.
+- **Project Details Page** – displays information about a specific project.
+- **Login Page** – allows existing users to authenticate.
+- **Registration Page** – allows new users to create an account.
 
-To build the project run:
+### Authenticated User Features
 
-```bash
-ng build
-```
+After successful authentication, users can access additional functionality:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Dashboard** – provides an overview of the user's projects and tasks.
+- **My Projects** – displays projects created by the authenticated user.
+- **Project Management** – allows users to create, edit, and delete their own projects.
+- **Task Management** – allows users to create, edit, view, and delete their own tasks.
+- **Task Details** – displays information about a specific task.
+- **Logout** – allows users to end their session.
 
-## Running unit tests
+## 4. Main Application Flow
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1. The user opens the Home page.
+2. The user navigates to the Projects catalog.
+3. The user selects a project and opens its Details page.
+4. The user can register or log in to access private functionality.
+5. After authentication, the user is redirected to their Dashboard.
+6. The authenticated user creates a new project.
+7. The user adds tasks to the project.
+8. The user manages tasks by editing their information and updating their status.
+9. The user can return to their personal projects and track their progress.
+10. The user can log out of the application.
 
-```bash
-ng test
-```
+## 5. Data Structure
 
-## Running end-to-end tests
+The application uses two main data collections: Projects and Tasks.
 
-For end-to-end (e2e) testing, run:
+### Project Object
 
-```bash
-ng e2e
-```
+- `id` – unique project identifier.
+- `title` – project title.
+- `description` – project description.
+- `ownerId` – identifier of the user who created the project.
+- `createdAt` – project creation date.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Task Object
 
-## Additional Resources
+- `id` – unique task identifier.
+- `title` – task title.
+- `description` – task description.
+- `status` – task status (Pending, In Progress, Completed).
+- `projectId` – identifier of the project to which the task belongs.
+- `ownerId` – identifier of the user who created the task.
+- `createdAt` – task creation date.
+- `dueDate` – task deadline.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 6. Project Architecture
+
+The application follows a feature-based architecture combined with a service layer approach.
+
+The project is organized into the following main folders:
+
+- `core/` – contains application-wide services and route guards.
+- `features/` – contains components organized by application functionality:
+  - `home/`
+  - `projects/`
+  - `project-details/`
+  - `auth/`
+  - `dashboard/`
+  - `my-projects/`
+  - `task-details/`
+- `shared/` – contains reusable components, interfaces, and pipes.
+- `app.routes.ts` – defines the application routes.
+
+Services are responsible for authentication and communication with the data source, while components handle the user interface and user interactions.
+
+## 7. Technologies Used
+
+- Angular 22
+- TypeScript
+- RxJS
+- Angular Router
+- Angular Reactive Forms
+- Firebase Authentication 
+- Firebase Firestore 
+- HTML
+- CSS
+- Git and GitHub
+
+## 8. How to Run the Project
+
+1. Clone the repository:
+
+   `git clone https://github.com/Ina2118/task-manager.git`
+
+2. Navigate to the project directory:
+
+   `cd task-manager`
+
+3. Install the dependencies:
+
+   `npm install`
+
+4. Start the Angular development server:
+
+   `ng serve`
+
+5. Open the application in your browser:
+
+   `http://localhost:4200`
+
