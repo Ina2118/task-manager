@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    /* Brand colors */
+    --tm-primary: #5A45FF;
+    --tm-secondary: #4338CA;
+    --tm-accent: #10B981;
+
+    /* Text colors */
+    --tm-text: #1F2937;
+    --tm-text-primary: #292D32;
+    --tm-text-secondary: #6B7280;
+
+    /* Background colors */
+    --tm-bg: #F8FAFC;
+    --tm-bg-card: #FFFFFF;
+    --tm-bg-secondary: #EDEBFF;
+
+    /* Button colors */
+    --tm-btn-primary: #5A45FF;
+    --tm-btn-primary-hover: #4338CA;
+    --tm-btn-secondary: #EDEBFF;
+
+    /* Status colors */
+    --tm-success: #10B981;
+    --tm-error: #DC2626;
+
+    /* Border and input colors */
+    --tm-border: #E5E7EB;
+    --tm-input-bg: #F8FAFC;
+    --tm-input-border: #E5E7EB;
+    --tm-input-focus: #5A45FF;
+}
