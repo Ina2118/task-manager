@@ -1,1 +1,114 @@
-<p>home works!</p>
+<main class="home-page-container">
+
+    <section class="home stack-section" #homeSection>
+        @if (homeVisible()){
+            <div animate.enter="section-enter">
+                <h1>Less chaos. More productivity.</h1>
+                <p>Organize your projects and manage your tasks in one place.</p>
+                <div class="home-btn">
+                    <a routerLink="/projects">Explore projects</a>
+                    <a routerLink="/login">Login</a>
+                </div>
+            </div>
+        }
+    </section>
+    
+    <section class="features stack-section" #featuresSection>
+        @if (featuresVisible()) {
+            <div animate.enter="section-enter">
+                <h2>Why Choose Task Manager</h2>
+                
+                
+                <div class="features-list">
+                    <article class="features-card">
+                        <h3>Organize your projects</h3>
+                        <p>Keep all your projects in one place.</p>
+                    </article>
+                    
+                    <article class="features-card">
+                        <h3>Track your tasks</h3>
+                        <p>Follow your tasks and deadlines.</p>
+                    </article>
+                    
+                    <article class="features-card">
+                        <h3>Manage your progress</h3>
+                        <p>See how your work is progressing.</p>
+                    </article>
+                </div>
+            </div>
+        }
+    </section>
+    
+    <section class="target-audience stack-section" #targetAudienceSection>
+        @if (targetVisible()){
+            <div animate.enter="section-enter">
+                <div class="target-audience-list">
+                    <h2>Who is it for?</h2>
+                    <article class="target-audience-card">
+                        <h3>Students</h3>
+                        <p>Organize study tasks, assignments, and deadlines.</p>
+                    </article>
+                    
+                    <article class="target-audience-card">
+                        <h3>Freelancers</h3>
+                        <p>Manage multiple projects and keep track of their progress.</p>
+                    </article>
+                    
+                    <article class="target-audience-card">
+                        <h3>Small Teams</h3>
+                        <p>Work together and keep tasks organized in one place.</p>
+                    </article>
+                </div>
+            </div>
+        }
+    </section>
+    
+    <section class="what-you-can-do stack-section" #whatYouCanDoSection>
+    @if (whatYouCanDoVisible()){
+        <div animate.enter="section-enter">
+            <h2>What Can You Do with Task Manager?</h2>
+            <p class="section-description">
+                Everything you need to stay organized and productive.
+            </p>
+            
+            <div class="what-you-can-do-list">
+                <article class="what-you-can-do-card">
+                    <h3>Create and Manage Projects</h3>
+                    <p>Create projects, edit their details and keep all your work organized.</p>
+                </article>
+                
+            <article class="what-you-can-do-card">
+                <h3>Manage Tasks</h3>
+                <p>Add tasks, update them and organize your work into smaller steps.</p>
+            </article>
+            
+            <article class="what-you-can-do-card">
+                <h3>Set Deadlines and Priorities</h3>
+                <p>Keep track of important deadlines and decide what needs attention first.</p>
+            </article>
+            
+            <article class="what-you-can-do-card">
+                <h3>Track Your Progress</h3>
+                <p>Monitor your projects and completed tasks from your dashboard.</p>
+            </article>
+            
+            <article class="what-you-can-do-card">
+                <h3>Personal Workspace</h3>
+                <p>Access your own projects and manage your tasks in one personal space.</p>
+            </article>
+        </div>
+    </div>
+}
+</section>
+
+<section class="cta-section stack-section" #ctaSection>
+    @if (ctaVisible()){
+        <div animate.enter="section-enter">
+            <h2>Ready to Get Organized?</h2>
+            <p>Start managing your projects and tasks today!</p>
+            
+            <a routerLink="/register">Create Your Account</a>
+        </div>
+    }
+</section>
+</main>
